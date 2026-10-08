@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dominion Bright | Graphic Designer</title>
+<meta name="description" content="Dominion Bright is a graphic designer in Nigeria creating brand identities, print design and AI ads for businesses worldwide.">
+<meta property="og:title" content="Dominion Bright | Graphic Designer">
+<meta property="og:description" content="Brand identities, print design and AI ads.">
+<meta property="og:image" content="images/portrait.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0a0a0a;--red:#ff4d1a;--grey:#6b6b6b;--line:#e8e8e8;--pad:clamp(20px,5vw,64px)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:400 16px/1.6 Inter,system-ui,-apple-system,sans-serif;color:var(--ink);background:#fff}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 var(--pad)}
+h1,h2,h3{letter-spacing:-.03em;line-height:1.05;font-weight:650}
+h2{font-size:clamp(1.9rem,5vw,3rem)}
+p{color:var(--grey)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:6px 20px 6px 6px;border-radius:99px;background:var(--red);color:#fff;text-decoration:none;font:500 .95rem Inter,system-ui,sans-serif;border:0;cursor:pointer}
+.btn i{width:32px;height:32px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center}
+.btn svg{width:14px;height:14px}
+.btn.dark{background:var(--ink)}
+.btn.dark i{background:#fff;color:var(--ink)}
+.btn.light{background:#fff;color:var(--ink)}
+.btn.line{background:#fff;color:var(--ink);border:1px solid var(--line)}
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{font-weight:700;font-size:1.2rem;text-decoration:none;letter-spacing:-.03em}
+.logo b{color:var(--red)}
+#menu{display:flex;gap:28px}
+#menu a{text-decoration:none;font-size:.92rem}
+#menu a:hover{color:var(--red)}
+.burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer}
+.burger span{display:block;width:22px;height:2px;background:var(--ink);margin:5px auto}
+/* hero */
+.hero{position:relative;min-height:min(92svh,860px);display:flex;align-items:flex-end;overflow:hidden;color:#fff;background:linear-gradient(160deg,#ff5a1f 0%,#d02a0c 60%,#7a1005 100%)}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 15%;mix-blend-mode:multiply}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,transparent 72%,#fff 100%)}
+.hero-in{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:end;padding-bottom:130px;padding-top:120px}
+.hero h1{font-size:clamp(2.5rem,8.5vw,6rem)}
+.hero p{color:rgba(255,255,255,.92)}
+.hero .avail{margin:10px 0 22px;font-size:.9rem}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+@keyframes up{from{opacity:0;transform:translateY(24px)}}
+.hero-in>*{animation:up .8s cubic-bezier(.2,.7,.2,1) both}
+.hero-in>*:last-child{animation-delay:.2s}
+/* sections */
+.sec{padding:96px 0;border-top:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:170px 1fr;gap:24px}
+.lab{display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--ink);padding-top:10px}
+.lab b{width:6px;height:6px;border-radius:50%;background:var(--red)}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:40px}
+.list{display:grid;gap:44px}
+.cover{display:block;width:100%;aspect-ratio:16/9;border:0;padding:0;border-radius:24px;overflow:hidden;cursor:pointer;background:#f3f3f3}
+.cover img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.cover:hover img{transform:scale(1.03)}
+.empty{width:100%;height:100%;min-height:120px;display:grid;place-items:center;background:#f3f3f3;color:var(--grey);font-size:.9rem;border-radius:inherit}
+.meta{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:16px}
+.meta h3{font-size:1.25rem;letter-spacing:-.02em}
+.meta p{font-size:.92rem}
+/* services */
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:48px 40px}
+.svc svg{width:56px;height:56px;margin-bottom:16px;stroke:var(--ink);fill:none;stroke-width:1.1}
+.svc h3{font-size:1.2rem;margin-bottom:6px;letter-spacing:-.02em}
+.svc p{font-size:.95rem}
+/* process */
+.steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.steps li{padding:24px 20px 0 0;counter-increment:s}
+.steps li::before{content:counter(s);display:block;color:var(--red);font-weight:600;margin-bottom:12px}
+.steps h3{font-size:1.15rem;margin-bottom:6px}
+.steps p{font-size:.92rem}
+/* contact */
+.big{font-size:clamp(2.6rem,10vw,6.5rem);margin-bottom:40px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.links{display:grid;gap:10px;align-content:start}
+.links a{text-decoration:none;font-weight:500;width:fit-content;border-bottom:1px solid var(--line)}
+.links a:hover{color:var(--red);border-color:var(--red)}
+.me{width:110px;aspect-ratio:3/4;object-fit:cover;border-radius:12px;margin-bottom:18px;background:#f3f3f3}
+form{display:grid;gap:12px}
+input,textarea{width:100%;font:inherit;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:#fff;color:var(--ink)}
+textarea{min-height:120px;resize:vertical}
+form .btn{width:fit-content}
+footer{border-top:1px solid var(--line);padding:28px 0;font-size:.85rem;color:var(--grey)}
+.fx{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+/* modal */
+dialog{width:min(960px,94vw);max-height:92vh;margin:auto;border:0;border-radius:24px;padding:28px;overflow:auto}
+dialog::backdrop{background:rgba(0,0,0,.65)}
+dialog h3{font-size:1.6rem;margin-bottom:6px}
+.gal{display:grid;gap:12px;margin-top:20px}
+.gal img{width:100%;border-radius:16px}
+.x{position:sticky;top:0;float:right;width:40px;height:40px;border-radius:50%;border:0;background:var(--ink);color:#fff;font-size:1.3rem;cursor:pointer}
+@media(max-width:820px){
+ .burger{display:block}
+ #menu{display:none;position:absolute;top:64px;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:8px var(--pad) 16px;border-bottom:1px solid var(--line)}
+ #menu.open{display:flex}
+ #menu a{padding:12px 0;font-size:1.05rem}
+ .hide-m{display:none}
+ .hero-in{grid-template-columns:1fr;gap:20px;padding-bottom:110px}
+ .grid{grid-template-columns:1fr;gap:8px}
+ .sec{padding:64px 0}
+ .svc{grid-template-columns:1fr}
+ .steps{grid-template-columns:1fr 1fr}
+ .steps li{padding-bottom:28px}
+ .contact{grid-template-columns:1fr}
+ .meta{flex-direction:column;align-items:flex-start}
+ .head{flex-direction:column;align-items:flex-start}
+}
+@media(prefers-reduced-motion:reduce){.hero-in>*{animation:none}html{scroll-behavior:auto}.cover img{transition:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="ar" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 7h10M8 3l4 4-4 4"/></symbol></svg>
+
+<header class="nav"><div class="wrap bar">
+ <a class="logo" href="#top">Dominion<b>.</b></a>
+ <nav id="menu" aria-label="Main">
+  <a href="#work">Work</a><a href="#services">Services</a><a href="#process">Process</a><a href="#contact">Contact</a>
+ </nav>
+ <a class="btn dark hide-m" href="#contact"><i><svg><use href="#ar"/></svg></i>Contact me</a>
+ <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+</div></header>
+
+<main>
+<section class="hero" id="top">
+ <img class="hero-img" src="images/portrait.jpg" alt="Portrait of Dominion Bright" onerror="this.remove()">
+ <div class="wrap hero-in">
+  <h1>Designs that make brands look expensive.</h1>
+  <div>
+   <p>I design brand identities, ads and print materials that help businesses get noticed and get paid.</p>
+   <p class="avail">Open to remote roles and freelance projects.</p>
+   <div class="ctas">
+    <a class="btn light" href="#work"><i><svg><use href="#ar"/></svg></i>View my work</a>
+    <a class="btn" href="#contact"><i><svg><use href="#ar"/></svg></i>Contact me</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="work"><div class="wrap grid">
+ <p class="lab"><b></b>Work showcase</p>
+ <div>
+  <div class="head"><h2>A selection of my best work.</h2></div>
+  <div class="list" id="list"></div>
+ </div>
+</div></section>
+
+<section class="sec" id="services"><div class="wrap grid">
+ <p class="lab"><b></b>Services</p>
+ <div>
+  <div class="head"><h2>Creative solutions that work.</h2></div>
+  <div class="svc" id="svc"></div>
+ </div>
+</div></section>
+
+<section class="sec" id="process"><div class="wrap">
+ <div class="head"><h2>How I work.</h2></div>
+ <ol class="steps">
+  <li><h3>Brief</h3><p>You tell me about the business, the audience and what you need.</p></li>
+  <li><h3>Concept</h3><p>I sketch directions and show you the strongest ones.</p></li>
+  <li><h3>Design</h3><p>I turn the chosen direction into finished, polished artwork.</p></li>
+  <li><h3>Delivery</h3><p>You get print-ready and web-ready files.</p></li>
+ </ol>
+</div></section>
+
+<section class="sec" id="contact"><div class="wrap">
+ <h2 class="big">Let's create together.</h2>
+ <div class="contact">
+  <div class="links" id="links">
+   <img class="me" src="images/portrait.jpg" alt="" onerror="this.remove()">
+  </div>
+  <form id="form">
+   <input name="n" placeholder="Your name" required autocomplete="name">
+   <input name="e" type="email" placeholder="Your email" required autocomplete="email">
+   <textarea name="m" placeholder="Tell me about your project" required></textarea>
+   <button class="btn" type="submit"><i><svg><use href="#ar"/></svg></i>Send message</button>
+  </form>
+ </div>
+</div></section>
+</main>
+
+<footer><div class="wrap fx"><span>&copy; 2026 Dominion Bright</span><span>Graphic designer, Nigeria. Available worldwide.</span></div></footer>
+
+<dialog id="dlg" aria-labelledby="dt">
+ <button class="x" aria-label="Close">&times;</button>
+ <h3 id="dt"></h3><p id="dd"></p><div class="gal" id="dg"></div>
+</dialog>
+
+<script>
+/* ===== EDIT THIS BLOCK ===== */
+const C={
+ email:'francisewerebright@gmail.com',
+ whatsapp:'2349115004811',           // country code 234, no + or spaces
+ linkedin:'https://www.linkedin.com/in/dominion-bright-063400316',
+ x:'',                               // e.g. https://x.com/yourhandle
+ behance:'',
+ instagram:''
+};
+/* Images live in images/projects/<folder>/1.jpg, 2.jpg, 3.jpg ... (1.jpg is the cover) */
+const P=[
+ {t:'Esthy Luxe',d:'Luxury beauty brand identity: logo, palette and packaging.',f:'esthy-luxe',n:8},
+ {t:'Concept ads',d:'AI-assisted ad concepts for Hermès, Pringles and NVIDIA.',f:'concept-ads',n:8},
+ {t:'Young Prince VIP Bar',d:'Food menu design for a VIP bar.',f:'young-prince',n:8},
+ {t:'Victoria Garden City Lounge',d:'Restaurant and fast food flyer.',f:'vgc-lounge',n:8}
+];
+const S=[
+ ['Brand identity design','Logos, colours, type and guidelines that make a business look consistent and trusted.','<circle cx="28" cy="28" r="24"/><circle cx="28" cy="28" r="17"/><circle cx="28" cy="28" r="10"/><circle cx="28" cy="28" r="3"/>'],
+ ['Flyers and print design','Menus, flyers, stickers and posters, prepared properly for the printer.','<rect x="12" y="6" width="32" height="44" rx="2"/><path d="M18 16h20M18 24h20M18 32h12M18 40h8"/>'],
+ ['AI ads and AI video','Product ads and short videos made with AI tools, directed with a designer\'s eye.','<circle cx="28" cy="28" r="24"/><path d="M23 18l16 10-16 10z"/>'],
+ ['Social media design','Post templates and campaign graphics that keep your page looking sharp.','<rect x="6" y="6" width="19" height="19"/><rect x="31" y="6" width="19" height="19"/><rect x="6" y="31" width="19" height="19"/><rect x="31" y="31" width="19" height="19"/>']
+];
+/* ===== END EDIT BLOCK ===== */
+
+const $=s=>document.querySelector(s);
+const AR='<i><svg><use href="#ar"/></svg></i>';
+
+function slot(src,alt){
+ const i=new Image();i.src=src;i.alt=alt;i.loading='lazy';
+ i.onerror=()=>{const d=document.createElement('div');d.className='empty';d.textContent='Image coming soon';i.replaceWith(d)};
+ return i;
+}
+P.forEach((p,k)=>{
+ const a=document.createElement('article');
+ a.innerHTML='<button class="cover" aria-label="Open '+p.t+'"></button><div class="meta"><div><h3>'+p.t+'</h3><p>'+p.d+'</p></div><button class="btn line">'+AR+'View work</button></div>';
+ a.querySelector('.cover').append(slot('images/projects/'+p.f+'/1.jpg',p.t+' cover'));
+ a.querySelectorAll('button').forEach(b=>b.onclick=()=>openP(k));
+ $('#list').append(a);
+});
+S.forEach(s=>{
+ const d=document.createElement('div');
+ d.innerHTML='<svg viewBox="0 0 56 56" aria-hidden="true">'+s[2]+'</svg><h3>'+s[0]+'</h3><p>'+s[1]+'</p>';
+ $('#svc').append(d);
+});
+const dlg=$('#dlg');
+function openP(k){
+ const p=P[k];
+ $('#dt').textContent=p.t;$('#dd').textContent=p.d;
+ const g=$('#dg');g.innerHTML='';
+ for(let i=1;i<=p.n;i++){
+  const im=new Image();im.src='images/projects/'+p.f+'/'+i+'.jpg';im.alt=p.t+' image '+i;im.loading='lazy';
+  im.onerror=()=>im.remove();g.append(im);
+ }
+ dlg.showModal();dlg.scrollTop=0;
+}
+$('.x').onclick=()=>dlg.close();
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+
+const L=[['Email','mailto:'+C.email],['LinkedIn',C.linkedin],['X',C.x],['Behance',C.behance],['Instagram',C.instagram],['WhatsApp',C.whatsapp&&'https://wa.me/'+C.whatsapp]];
+L.forEach(([n,h])=>{if(!h)return;const a=document.createElement('a');a.href=h;a.textContent=n;if(h.startsWith('http'))a.target='_blank',a.rel='noopener';$('#links').append(a)});
+
+$('#form').onsubmit=e=>{
+ e.preventDefault();const f=e.target;
+ const body='From: '+f.n.value+' ('+f.e.value+')\n\n'+f.m.value;
+ location.href='mailto:'+C.email+'?subject='+encodeURIComponent('Project enquiry from '+f.n.value)+'&body='+encodeURIComponent(body);
+};
+const bg=$('.burger'),mn=$('#menu');
+bg.onclick=()=>{const o=mn.classList.toggle('open');bg.setAttribute('aria-expanded',o)};
+mn.querySelectorAll('a').forEach(a=>a.onclick=()=>{mn.classList.remove('open');bg.setAttribute('aria-expanded',false)});
+</script>
+</body>
+</html>

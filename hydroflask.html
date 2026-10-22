@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hydro Flask | Dominion Bright</title>
+<meta name="description" content="Six vertical concept ads for a pink 32 oz Hydro Flask bottle, designed by Dominion Bright.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --plum: #2b1020;
+    --plum-deep: #1d0a15;
+    --paper: #fbeff2;
+    --muted: #d3b3c0;
+    --pink: #ff5c93;
+    --line: rgba(251, 239, 242, .16);
+    --display: "Bricolage Grotesque", "Arial Black", system-ui, sans-serif;
+    --body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--plum);
+    color: var(--paper);
+    font-family: var(--body);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--pink); outline-offset: 3px; }
+
+  .wrap { width: min(1180px, 100% - 40px); margin-inline: auto; }
+
+  .topbar { padding: 22px 0; }
+  .back {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--muted);
+    padding: 6px 0;
+  }
+  .back:hover { color: var(--paper); }
+
+  .hero { padding: 40px 0 56px; }
+  h1 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(3.6rem, 14vw, 10.5rem);
+    line-height: .88;
+    letter-spacing: -.035em;
+    color: var(--pink);
+    margin-bottom: 36px;
+  }
+  .hero-grid {
+    display: grid;
+    gap: 36px;
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+  .intro {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+    line-height: 1.3;
+    max-width: 30ch;
+  }
+  dl { display: grid; gap: 0; border-top: 1px solid var(--line); }
+  dl div {
+    display: grid;
+    grid-template-columns: 9.5rem 1fr;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  dt { color: var(--muted); }
+  dd { font-weight: 500; }
+
+  .gallery { padding: 8px 0 80px; }
+  .grid {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: zoom-in;
+  }
+  .grid img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+    border-radius: 6px;
+    background: var(--plum-deep);
+  }
+  .grid span {
+    display: block;
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: .95rem;
+  }
+
+  .cta {
+    background: var(--pink);
+    color: var(--plum-deep);
+    padding: 72px 0;
+  }
+  .cta h2 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(2rem, 6vw, 4rem);
+    line-height: 1;
+    letter-spacing: -.02em;
+    max-width: 16ch;
+    margin-bottom: 28px;
+  }
+  .cta-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+  .btn {
+    display: inline-block;
+    padding: 14px 26px;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid var(--plum-deep);
+  }
+  .btn.solid { background: var(--plum-deep); color: var(--paper); }
+  .btn.ghost { color: var(--plum-deep); }
+  .btn:hover { transform: translateY(-2px); }
+
+  footer { padding: 28px 0; color: var(--muted); font-size: .95rem; }
+
+  dialog {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    max-width: 100vw;
+    max-height: 100vh;
+    width: 100%;
+    height: 100%;
+  }
+  dialog::backdrop { background: rgba(20, 6, 14, .94); }
+  .lb {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+  }
+  .lb img {
+    max-width: 100%;
+    max-height: calc(100vh - 100px);
+    border-radius: 6px;
+  }
+  .lb-bar {
+    position: fixed;
+    inset: auto 0 18px 0;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  }
+  .lb-bar button {
+    background: var(--paper);
+    color: var(--plum-deep);
+    border: 0;
+    border-radius: 999px;
+    padding: 10px 20px;
+    font: 600 1rem var(--body);
+    cursor: pointer;
+  }
+
+  @media (min-width: 760px) {
+    .hero-grid { grid-template-columns: 1fr 1fr; gap: 64px; }
+    .grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  }
+  @media (max-width: 480px) {
+    dl div { grid-template-columns: 1fr; gap: 2px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn:hover { transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="back" href="index.html">Back to all work</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>Hydro Flask</h1>
+      <div class="hero-grid">
+        <p class="intro">Six vertical ads that sell one pink bottle in six different moments of the day.</p>
+        <dl>
+          <div><dt>Brand</dt><dd>Hydro Flask</dd></div>
+          <div><dt>Project type</dt><dd>Concept ad campaign</dd></div>
+          <div><dt>Product</dt><dd>32 oz wide mouth, flex straw cap</dd></div>
+          <div><dt>Deliverables</dt><dd>6 vertical ads for Instagram and TikTok</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" aria-label="Hydro Flask ads">
+    <div class="wrap">
+      <ul class="grid">
+        <li><button type="button" data-i="0"><img src="images/18111.jpg" alt="Hydro Flask ad on a marble table with sunglasses, a phone and a leaf, headline: Simplicity meets performance" loading="lazy"><span>Home flat-lay</span></button></li>
+        <li><button type="button" data-i="1"><img src="images/18108.jpg" alt="Hydro Flask ad on a black background, headline: Cold for 24hrs. Hot for 12." loading="lazy"><span>Dark studio with shop button</span></button></li>
+        <li><button type="button" data-i="2"><img src="images/18106.jpg" alt="Hydro Flask ad on a pink gradient with price tag, headline: Stay Cold. Stay Bold." loading="lazy"><span>Studio with price tag</span></button></li>
+        <li><button type="button" data-i="3"><img src="images/18110.jpg" alt="Hydro Flask ad on a gym bench next to a dumbbell and towel, headline: Fuel Your Grind" loading="lazy"><span>Gym</span></button></li>
+        <li><button type="button" data-i="4"><img src="images/18107.jpg" alt="Hydro Flask ad on a wooden table in a sunlit park, headline: Hydration That Keeps Up With You" loading="lazy"><span>Outdoors</span></button></li>
+        <li><button type="button" data-i="5"><img src="images/18109.jpg" alt="Hydro Flask ad on a split pink and white background, headline: Your new favorite bottle" loading="lazy"><span>Split-colour studio</span></button></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Need ads like these for your product?</h2>
+    <div class="cta-actions">
+      <a class="btn solid" href="https://wa.me/2349115004811">Message me on WhatsApp</a>
+      <a class="btn ghost" href="mailto:francisewerebright@gmail.com">Send an email</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Hydro Flask is a concept project and is not affiliated with the brand.</div>
+</footer>
+
+<dialog id="lb" aria-label="Image viewer">
+  <div class="lb">
+    <img id="lb-img" src="" alt="">
+    <div class="lb-bar">
+      <button type="button" id="lb-prev">Previous</button>
+      <button type="button" id="lb-next">Next</button>
+      <button type="button" id="lb-close">Close</button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+  (function () {
+    var buttons = Array.prototype.slice.call(document.querySelectorAll(".grid button"));
+    var dlg = document.getElementById("lb");
+    var big = document.getElementById("lb-img");
+    var current = 0;
+
+    function show(i) {
+      current = (i + buttons.length) % buttons.length;
+      var img = buttons[current].querySelector("img");
+      big.src = img.getAttribute("src");
+      big.alt = img.getAttribute("alt");
+    }
+    buttons.forEach(function (b, i) {
+      b.addEventListener("click", function () { show(i); dlg.showModal(); });
+    });
+    document.getElementById("lb-prev").addEventListener("click", function () { show(current - 1); });
+    document.getElementById("lb-next").addEventListener("click", function () { show(current + 1); });
+    document.getElementById("lb-close").addEventListener("click", function () { dlg.close(); });
+    dlg.addEventListener("click", function (e) { if (e.target === dlg || e.target.className === "lb") dlg.close(); });
+    document.addEventListener("keydown", function (e) {
+      if (!dlg.open) return;
+      if (e.key === "ArrowRight") show(current + 1);
+      if (e.key === "ArrowLeft") show(current - 1);
+    });
+  })();
+</script>
+</body>
+</html>
